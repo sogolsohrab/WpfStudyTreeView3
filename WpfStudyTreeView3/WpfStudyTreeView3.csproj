@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\DeleteIcon.jpg" />
+    <None Remove="Resources\MeeraIcon.jpg" />
+    <None Remove="Resources\Polygon.jpg" />
+    <None Remove="Resources\RenameIcon.jpg" />
+    <None Remove="Resources\Rock.jpg" />
+    <None Remove="Resources\RockChild.jpg" />
+    <None Remove="Resources\RockChild2.jpg" />
+    <None Remove="Resources\RockChild3.jpg" />
+    <None Remove="Resources\WarningIcon.jpg" />
+    <None Remove="Resources\Well.jpg" />
+    <None Remove="Resources\WellChild.jpg" />
+    <None Remove="Resources\WellStrategy.jpg" />
+    <None Remove="Resources\WellStrategyChild.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\RockChild3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\DeleteIcon.jpg" />
+    <Resource Include="Resources\MeeraIcon.jpg" />
+    <Resource Include="Resources\Polygon.jpg" />
+    <Resource Include="Resources\RenameIcon.jpg" />
+    <Resource Include="Resources\Rock.jpg" />
+    <Resource Include="Resources\RockChild.jpg" />
+    <Resource Include="Resources\RockChild2.jpg" />
+    <Resource Include="Resources\WarningIcon.jpg" />
+    <Resource Include="Resources\Well.jpg" />
+    <Resource Include="Resources\WellChild.jpg" />
+    <Resource Include="Resources\WellStrategy.jpg" />
+    <Resource Include="Resources\WellStrategyChild.jpg" />
+  </ItemGroup>
+
+</Project>
