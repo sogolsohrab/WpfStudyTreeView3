@@ -283,11 +283,9 @@ namespace WpfStudyTreeView3
             // Check Duplicate Nodes
             bool IsDuplicate = false;
 
-            IsDuplicate = MyViewModel.Items.Any(x => x.Name == renameTextBox.Text);
-
             foreach (TreeNodeModel item in TreeParentsList)
             {
-                if (item.Items.Any(x => x.Name == renameTextBox.Text))
+                if ((item.Items.Any(x => x.Name == renameTextBox.Text)) || (item.Name == renameTextBox.Text))
                 {
                     IsDuplicate = true;
                 }

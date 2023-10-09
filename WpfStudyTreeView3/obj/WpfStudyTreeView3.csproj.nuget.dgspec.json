@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User1\\source\\repos\\WPF\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj": {}
+    "C:\\Users\\User1\\Source\\Repos\\sogolsohrab\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User1\\source\\repos\\WPF\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj": {
+    "C:\\Users\\User1\\Source\\Repos\\sogolsohrab\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User1\\source\\repos\\WPF\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj",
+        "projectUniqueName": "C:\\Users\\User1\\Source\\Repos\\sogolsohrab\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj",
         "projectName": "WpfStudyTreeView3",
-        "projectPath": "C:\\Users\\User1\\source\\repos\\WPF\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj",
+        "projectPath": "C:\\Users\\User1\\Source\\Repos\\sogolsohrab\\WpfStudyTreeView3\\WpfStudyTreeView3\\WpfStudyTreeView3.csproj",
         "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User1\\source\\repos\\WPF\\WpfStudyTreeView3\\WpfStudyTreeView3\\obj\\",
+        "outputPath": "C:\\Users\\User1\\Source\\Repos\\sogolsohrab\\WpfStudyTreeView3\\WpfStudyTreeView3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
