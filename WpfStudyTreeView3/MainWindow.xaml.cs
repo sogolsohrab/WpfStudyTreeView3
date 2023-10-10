@@ -22,9 +22,9 @@ namespace WpfStudyTreeView3
     /// </summary>
     public partial class MainWindow : Window
     {
-        public TreeNodeViewModel MyViewModel { get; set; }
+        private TreeNodeViewModel ViewModel;
 
-        public List<TreeNodeModel> TreeParentsList = new();
+        public List<TreeNodeModel> TreeParentsList { get; set; }
 
         public MainWindow()
         {
@@ -38,13 +38,14 @@ namespace WpfStudyTreeView3
 
         private void LoadTree(List<TreeNodeModel> sampleData)
         {
-            MyViewModel = new TreeNodeViewModel();
+            ViewModel = new TreeNodeViewModel();
+            TreeParentsList = new List<TreeNodeModel>();
 
             foreach (TreeNodeModel node in sampleData)
             {
                 if (node.ParentName == "")
                 {
-                    MyViewModel.Items.Add(node);
+                    ViewModel.Items.Add(node);
                 }
                 else
                 {
@@ -104,7 +105,7 @@ namespace WpfStudyTreeView3
         private void SortTree()
         {
             // Sort Parents
-            CustomOrder.OrderModel(MyViewModel.Items);
+            CustomOrder.OrderModel(ViewModel.Items);
 
             // Sort Children
             foreach (TreeNodeModel item in TreeParentsList)
@@ -117,7 +118,7 @@ namespace WpfStudyTreeView3
         {
             MyTree.ItemTemplate = CreateDataTemplate();
             MyTree.ItemContainerStyle = CreateStyle();
-            MyTree.ItemsSource = MyViewModel.Items;
+            MyTree.ItemsSource = ViewModel.Items;
             MyTree.SelectedItemChanged += OnSelectedItemChanged;
         }
 
@@ -164,7 +165,7 @@ namespace WpfStudyTreeView3
 
         private void OnPreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (MyViewModel.SelectedItem == null)
+            if (ViewModel.SelectedItem == null)
             {
                 return;
             }
@@ -173,7 +174,7 @@ namespace WpfStudyTreeView3
             MenuItem renameMenuItem = CreateMenuItem("Rename", Constants.ImagePath.RenameIconImagePath, RenameMenuItem_Click);
             MenuItem deleteMenuItem = CreateMenuItem("Delete", Constants.ImagePath.DeleteIconImagePath, DeleteMenuItem_Click);
 
-            if (MyViewModel.SelectedItem.IsParentNode)
+            if (ViewModel.SelectedItem.IsParentNode)
             {
                 contextMenu.Items.Add(renameMenuItem);
             }
@@ -219,7 +220,7 @@ namespace WpfStudyTreeView3
         #region SelectedItemChanged
         private void OnSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            MyViewModel.SelectedItem = (TreeNodeModel)e.NewValue;
+            ViewModel.SelectedItem = (TreeNodeModel)e.NewValue;
         }
         #endregion SelectedItemChanged
 
@@ -239,7 +240,7 @@ namespace WpfStudyTreeView3
         {
             foreach (TreeNodeModel item in TreeParentsList)
             {
-                item.Items.Remove(MyViewModel.SelectedItem);
+                item.Items.Remove(ViewModel.SelectedItem);
             }
 
             UpdatePanelsVisibility(HomePanel);
@@ -251,7 +252,7 @@ namespace WpfStudyTreeView3
         private void RenameMenuItem_Click(object sender, RoutedEventArgs e)
         {
             UpdatePanelsVisibility(RenamePanel);
-            renameTextBox.Text = MyViewModel.SelectedItem.Name ?? "";
+            renameTextBox.Text = ViewModel.SelectedItem.Name ?? "";
         }
 
         private void RenameAbortButton_Click(object sender, RoutedEventArgs e)
@@ -266,7 +267,7 @@ namespace WpfStudyTreeView3
             bool IsEditingPossible = CheckEditingPossibility();
             if (IsEditingPossible)
             {
-                MyViewModel.SelectedItem.Name = renameTextBox.Text;
+                ViewModel.SelectedItem.Name = renameTextBox.Text;
                 UpdatePanelsVisibility(HomePanel);
                 SortTree();
                 errorLabel.Content = string.Empty;
